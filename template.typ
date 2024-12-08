@@ -5,7 +5,8 @@
   body
 ) = {
   set document(author: authors, title: title)
-  set text(lang: "ru")
+  set text(lang: "ru", size: 14pt, )
+  set par(justify: true)
   set page(paper: "a4")
   set figure(numbering: "1")
 
