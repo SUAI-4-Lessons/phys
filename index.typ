@@ -6,4 +6,6 @@
 
 #include "mechanics/mechanics.typ"
 
+#pagebreak()
+
 #include "tasks/tasks.typ"
