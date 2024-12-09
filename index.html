@@ -28,35 +28,38 @@
 
 <body>
     <canvas id="pdf-canvas"></canvas>
-    <script type="module">
-        import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.min.mjs';
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const url = 'index.pdf'; // Замените на URL вашего PDF файла
+            const canvas = document.getElementById('pdf-canvas');
+            const context = canvas.getContext('2d');
 
-        const url = 'index.pdf'; // Замените на URL вашего PDF файла
-        const canvas = document.getElementById('pdf-canvas');
-        const context = canvas.getContext('2d');
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.worker.mjs';
 
-        // Устанавливаем worker
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.worker.min.js';
 
-        // Загружаем документ
-        pdfjsLib.getDocument(url).promise.then(pdfDoc => {
-            // Загружаем первую страницу
-            return pdfDoc.getPage(1).then(page => {
-                // Определяем размеры страницы
-                const viewport = page.getViewport({ scale: 1 });
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
+            // Настройки PDF.js
+            const loadingTask = pdfjsLib.getDocument(url);
 
-                // Рисуем страницу на canvas
-                const renderContext = {
-                    canvasContext: context,
-                    viewport: viewport,
-                };
-                return page.render(renderContext).promise;
+            loadingTask.promise.then(pdf => {
+                // Загрузка первой страницы
+                return pdf.getPage(1).then(page => {
+                    const viewport = page.getViewport({ scale: 1.5 });
+
+                    // Установка размера canvas
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+
+                    // Отрисовка страницы
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport,
+                    };
+                    return page.render(renderContext).promise;
+                });
+            }).catch(err => {
+                console.error('Ошибка при загрузке PDF:', err);
             });
-        }).catch(error => {
-            console.error('Error loading PDF:', error);
-        });
+        })
     </script>
 
 </body>
