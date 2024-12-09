@@ -23,8 +23,14 @@
   outline(depth: 2, indent: 5%)
   pagebreak()  
 
+  
+
   set page(numbering: "1", number-align: top + right)
   set text(size: 14pt)
   show math.equation: set text(size: 15pt)
+  show link: set text(rgb("#5f8de7"), )
+  show link: it => {
+    underline(it)
+  }
   body
 }
