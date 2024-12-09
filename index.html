@@ -16,50 +16,15 @@
             height: 100%;
         }
 
-        #pdf-canvas {
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
     </style>
 </head>
 
 <body>
-    <canvas id="pdf-canvas"></canvas>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const url = 'index.pdf'; // Замените на URL вашего PDF файла
-            const canvas = document.getElementById('pdf-canvas');
-            const context = canvas.getContext('2d');
-
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.worker.mjs';
-
-
-            // Настройки PDF.js
-            const loadingTask = pdfjsLib.getDocument(url);
-
-            loadingTask.promise.then(pdf => {
-                // Загрузка первой страницы
-                return pdf.getPage(1).then(page => {
-                    const viewport = page.getViewport({ scale: 1.5 });
-
-                    // Установка размера canvas
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
-
-                    // Отрисовка страницы
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport,
-                    };
-                    return page.render(renderContext).promise;
-                });
-            }).catch(err => {
-                console.error('Ошибка при загрузке PDF:', err);
-            });
-        })
-    </script>
+    <iframe 
+        src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://suai-4-lessons.github.io/phys/index.pdf" 
+        width="100%" 
+        height="100%" 
+        style="border: none;">
+    </iframe>
 
 </body>
