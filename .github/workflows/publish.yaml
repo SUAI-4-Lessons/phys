@@ -21,7 +21,8 @@ jobs:
       - name: Upload all
         uses: actions/upload-artifact@v3
         with:
-          path: .
+          name: PDF
+          path: index.pdf
 
       - name: Get current date
         id: date
@@ -31,6 +32,10 @@ jobs:
         with:
           tag_name: "${{ env.DATE }}"
           files: index.pdf
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public   
     
   deploy:
     environment:
