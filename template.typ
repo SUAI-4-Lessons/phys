@@ -25,5 +25,6 @@
 
   set page(numbering: "1", number-align: top + right)
   set text(size: 14pt)
+  show math.equation: set text(size: 15pt)
   body
 }
