@@ -17,8 +17,13 @@
   v(1pt)
   text(authors.join(", "), size: 9pt)
 
+
   v(1fr)
   pagebreak()
-  
+  outline(depth: 2, indent: 5%)
+  pagebreak()  
+
+  set page(numbering: "1", number-align: top + right)
+  set text(size: 14pt)
   body
 }
