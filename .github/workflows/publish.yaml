@@ -19,6 +19,7 @@ jobs:
       - uses: typst-community/setup-typst@v3
       - run: typst compile index.typ index.pdf
       - run: typst compile taskonly.typ tasks.pdf
+      - run: typst compile ./tasks/formuls.typ formuls.pdf
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
