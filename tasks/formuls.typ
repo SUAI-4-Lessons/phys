@@ -131,5 +131,16 @@
     $
       xi(x, t) = 2A cos k x cos omega t
     $
+    #header[Масса в релятивистской механика]
+
+    $
+      m_"rel" = frac(m, sqrt(1 - v^2/c^2))
+    $
+  ],
+  [
+    #header[Нормальное ускорение]
+    $
+      a_n = v^2/r = omega^2 r
+    $
   ],
 )
