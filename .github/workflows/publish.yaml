@@ -18,11 +18,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: typst-community/setup-typst@v3
       - run: typst compile index.typ index.pdf
-      - name: Upload all
-        uses: actions/upload-artifact@v3
-        with:
-          name: PDF
-          path: index.pdf
+      - run: typst compile taskonly.typ tasks.pdf
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
