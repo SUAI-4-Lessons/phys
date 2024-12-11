@@ -147,12 +147,12 @@
     #header[Момент силы]
 
     $
-      arrow(M) = [arrow(r), arrow(F)] = I arrow(x)
+      arrow(M) = [arrow(r), arrow(F)] = I arrow(xi)
     $
   ],
   [
     #header[Энергия в релятивистской механике]
-    
+
     Энергия покоя:
 
     $
@@ -162,14 +162,21 @@
     Полная энергия:
 
     $
-    E = frac(m c^2, sqrt(1-v^2/c^2))
+      E = frac(m c^2, sqrt(1-v^2/c^2))
     $
 
     Кинетическая энергия:
 
     $
-    E_к = E - E_0 = m c^2(frac(\1, sqrt(1-v^2/c^2)) - 1)
+      E_к = E - E_0 = m c^2(frac(\1, sqrt(1-v^2/c^2)) - 1)
     $
 
-  ]
+  ],
+  [#header[Момент инерции]
+
+    $
+      I = sum m_i r_i^2
+    $
+
+  ],
 )
