@@ -178,5 +178,20 @@
       I = sum m_i r_i^2
     $
 
+    #header[Момент импульса]
+
+    $
+      arrow(L) = [arrow(r) arrow(m) arrow(v)]
+    $
+
   ],
 )
+
+#image("images/7.png")
+
+#align(center,image("images/8.png", width: 82%))
+
+#image("images/9.png")
+
+#align(center,image("images/10.png", width: 82%))
+
