@@ -181,10 +181,29 @@
     #header[Момент импульса]
 
     $
-      arrow(L) = [arrow(r) arrow(m) arrow(v)]
+      arrow(L) = m[arrow(r) arrow(v)]
     $
 
+    #header[Гармонические колебания]
+
+    $
+    x(t) = A cos (omega t + alpha)
+    $
+
+    $
+    omega = 2pi v = 2pi/T
+    $
+
+    Частота колебаний:
+
+    $
+    nu = 1/T
+    $
+
+
+
   ],
+  
 )
 
 #image("images/7.png")
@@ -195,3 +214,4 @@
 
 #align(center,image("images/10.png", width: 82%))
 
+#image("images/11.png")
